@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% load static %}
+
+
+{% block content %}
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../static/images/logo.webp" alt="Logo" class="d-inline-block align-text-top">
+        </a>
+        <h2>Análise de Planilha do Ponto</h2>
+    </div>
+</nav>
+
+<div class="row">
+    <form class="row row-cols-lg-auto g-3 align-items-center" method="post" enctype="multipart/form-data">
+        <div class="col-12">
+            {% csrf_token %}
+            <br>
+            <div class="input-group mb-3">
+                {% render_field form.up_file class+="form-control" %}
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
