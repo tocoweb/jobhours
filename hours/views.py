@@ -5,7 +5,7 @@ from django.shortcuts import render
 import pandas as pd
 import numpy as np
 from datetime import datetime
-from .forms import CalculateForm
+from hours.forms import CalculateForm
 
 
 def handle_uploaded_file(file_handle):
@@ -251,8 +251,6 @@ def handle_uploaded_file(file_handle):
 
 
 def index(request):
-    if request.method == "GET":
-        return render(request, "index.html")
 
     if request.method == "POST":
         form = CalculateForm(request.POST, request.FILES)
