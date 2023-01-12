@@ -19,7 +19,8 @@
             {% csrf_token %}
             <br>
             <div class="input-group mb-3">
-                {% render_field form.up_file class+="form-control" %}
+                <!-- {{ form.as_p }} -->
+                {% render_field form.up_file class="form-control" %}
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </div>
