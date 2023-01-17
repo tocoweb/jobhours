@@ -14,16 +14,25 @@
 </nav>
 
 <div class="row">
-    <form class="row row-cols-lg-auto g-3 align-items-center" method="post" enctype="multipart/form-data">
-        <div class="col-12">
-            {% csrf_token %}
-            <br>
-            <div class="input-group mb-3">
-                {% render_field form.up_file class="form-control" %}
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div {% if message.tags %} class="alert alert-{{ message.tags }}" {% endif %}>{{ message }}</div>
+        {% endfor %}
+        </d>
+        {% endif %}
+        <form class="row row-cols-lg-auto g-3 align-items-center" method="post" enctype="multipart/form-data">
+            <div class="col-12">
+                {% csrf_token %}
+                <br>
+                <div class="input-group mb-3">
+                    {% render_field form.up_file class="form-control" %}
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
 
-{% endblock %}
+
+
+    {% endblock %}
