@@ -33,7 +33,7 @@ def handle_uploaded_file(file_handle):
 
         zero = pd.to_timedelta("00:00:00")
         tres = pd.to_timedelta("03:00:00")
-        dezoitoetrinta = pd.to_timedelta("18:30:00")
+        dezoitoetrinta = pd.to_datetime("18:30:00", infer_datetime_format=True)
         doismin = pd.to_timedelta("00:02:00")
         doish = pd.to_timedelta("02:00:00")
         cinco = pd.to_timedelta("05:00:00")
